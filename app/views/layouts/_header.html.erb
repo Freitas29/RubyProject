@@ -1,10 +1,10 @@
-<nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
+<nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="#">Default Color</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar-default">
+        <div class="collapse navbar-collapse" id="navbar-primary">
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col-6 collapse-brand">
@@ -13,7 +13,7 @@
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
                             <span></span>
                             <span></span>
                         </button>
@@ -28,6 +28,7 @@
                 </li>
                 <%else%>
                 <li class="nav-item">
+                    <%= icon('fas', 'flag') %>
                     <%=link_to "Logar-se", new_user_session_path, class: "nav-link"%>
                 </li>
                 <li class="nav-item">
