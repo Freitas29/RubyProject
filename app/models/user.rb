@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable 
 
-  def is_admin?
+  has_many :posts
+  
+   def is_admin?
     self.kind == "admin" ? true : false
   end
 end

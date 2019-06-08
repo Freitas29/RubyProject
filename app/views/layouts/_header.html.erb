@@ -26,9 +26,11 @@
                 <li class="nav-item">           
                     <%=link_to "Deslogar", destroy_user_session_url,:method => :delete,class: "nav-link" %>
                 </li>
+                <li class="nav-item">           
+                    <%=link_to "Criar post", new_post_path,class: "nav-link" %>
+                </li>                
                 <%else%>
-                <li class="nav-item">
-                    <%= icon('fas', 'flag') %>
+                <li class="nav-item ">
                     <%=link_to "Logar-se", new_user_session_path, class: "nav-link"%>
                 </li>
                 <li class="nav-item">
