@@ -28,19 +28,21 @@
                 </li>
                 </li>
                 <% if current_user%>
-                <li class="nav-item">           
-                    <%=link_to "Deslogar", destroy_user_session_url,:method => :delete,class: "nav-link" %>
-                </li>
-                <li class="nav-item">           
-                    <%=link_to "Criar post", new_post_path,class: "nav-link" %>
-                </li>                
+                    <li class="nav-item">           
+                        <%=link_to "Deslogar", destroy_user_session_url,:method => :delete,class: "nav-link" %>
+                    </li>
+                    <%if current_user.is_admin%>    
+                        <li class="nav-item">           
+                            <%=link_to "Criar post", new_post_path,class: "nav-link" %>
+                        </li>
+                    <%end%>                
                 <%else%>
-                <li class="nav-item ">
-                    <%=link_to "Logar-se", new_user_session_path, class: "nav-link"%>
-                </li>
-                <li class="nav-item">
-                    <%=link_to "Registrar-se", new_user_registration_path, class: "nav-link"%>
-                </li>
+                    <li class="nav-item ">
+                        <%=link_to "Logar-se", new_user_session_path, class: "nav-link"%>
+                    </li>
+                    <li class="nav-item">
+                        <%=link_to "Registrar-se", new_user_registration_path, class: "nav-link"%>
+                    </li>
                 <%end%>
             </ul>
             

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  before_action :is_admin?
   # GET /posts
   # GET /posts.json
   def index
@@ -66,6 +66,10 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def is_admin? 
+      redirect_to root_path unless current_user.is_admin
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
