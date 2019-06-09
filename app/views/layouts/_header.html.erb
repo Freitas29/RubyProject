@@ -42,8 +42,7 @@
                             <%= current_user.name %>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Action</button>
-                            <button class="dropdown-item" type="button">Another action</button>
+                            <%=link_to "Editar dados", edit_user_registration_path, class: "dropdown-item"%>
                             <button class="dropdown-item" type="button">Something else here</button>
                         </div>
                     </div>              
