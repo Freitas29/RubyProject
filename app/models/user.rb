@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   
+  validates :name, presence: true
+  
    def is_admin
     self.kind == "admin" ? true : false
   end
